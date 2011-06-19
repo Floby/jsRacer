@@ -1,0 +1,18 @@
+{
+  "author": "",
+  "name": "JsRacer",
+  "description": "A funny with cars, browsers and node.js",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Floby/jsRacer.git"
+  },
+  "engines": {
+    "node": "0.4"
+  },
+  "dependencies": {
+    "express":"2.3",
+    "dnode":"0.7"
+  },
+  "devDependencies": {}
+}
