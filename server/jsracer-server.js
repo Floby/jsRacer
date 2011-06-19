@@ -1,6 +1,24 @@
 var sys = require("util"), ws = require('./lib/ws');
+var express = require('express');
+
 
 var server = ws.createServer();
+var app = express.createServer();
+app.configure(function() {
+    app.use(express.methodOverride());
+    app.use(express.bodyParser());
+    app.use(express.cookieParser());
+    app.use(express.session());
+    app.use(app.router);
+    app.use(express.static(__dirname+'/../clients'));
+    app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+
+    app.set('views', __dirname+'/views');
+    app.set('view options', {
+        appName:"JsRacer"
+    })
+})
+app.listen(3000);
 
 var Network = {};
 
